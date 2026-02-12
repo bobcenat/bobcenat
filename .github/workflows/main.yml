@@ -1,0 +1,45 @@
+name: Update README cards
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # Runs once daily at midnight
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v6
+      
+      - name: Sync with remote
+        run: |
+          git fetch origin
+          git reset --hard origin/main
+      
+      - name: Generate stats card
+        uses: readme-tools/github-readme-stats-action@v1
+        with:
+          card: stats
+          options: username=binnichtaktiv&show_icons=true&theme=radical&show=reviews,discussions_started,discussions_answered,prs_merged&icon_color=be76ee&rank_icon=github
+          path: profile/stats.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate top languages card
+        uses: readme-tools/github-readme-stats-action@v1
+        with:
+          card: top-langs
+          options: username=binnichtaktiv&layout=compact&langs_count=10&bg_color=141321&text_color=FFFFFF&title_color=FA3C8C&stats_format=percentages&hide_border=false&border_radius=4.5&card_width=466&locale=pt-br&custom_title=Most+used+languages
+          path: profile/top-langs.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit cards
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "96953964+binnichtaktiv@users.noreply.github.com"
+          git add profile/*.svg
+          git commit -m "Update README cards" || exit 0
+          git push
