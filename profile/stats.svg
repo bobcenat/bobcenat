@@ -9,7 +9,7 @@
         aria-labelledby="descId"
       >
         <title id="titleId">binnichtaktiv's GitHub Stats, Rank: B+</title>
-        <desc id="descId">Total Stars Earned: 120, Total Commits  (last year) : 150, Total PRs: 13, Total PRs Merged: 9, Total PRs Reviewed: 2, Total Issues: 104, Total Discussions Started: 5, Total Discussions Answered: 0, Contributed to (last year): 26</desc>
+        <desc id="descId">Total Stars Earned: 120, Total Commits  (last year) : 150, Total PRs: 13, Total PRs Merged: 9, Total PRs Reviewed: 2, Total Issues: 106, Total Discussions Started: 6, Total Discussions Answered: 0, Contributed to (last year): 26</desc>
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
@@ -73,7 +73,7 @@
         stroke-dashoffset: 251.32741228718345;
       }
       to {
-        stroke-dashoffset: 118.0255796594495;
+        stroke-dashoffset: 117.96238160327191;
       }
     }
   
@@ -237,7 +237,7 @@
         x="219.01"
         y="12.5"
         data-testid="issues"
-      >104</text>
+      >106</text>
     </g>
   </g><g transform="translate(0, 150)">
     <g class="stagger" style="animation-delay: 1350ms" transform="translate(25, 0)">
@@ -252,7 +252,7 @@
         x="219.01"
         y="12.5"
         data-testid="discussions_started"
-      >5</text>
+      >6</text>
     </g>
   </g><g transform="translate(0, 175)">
     <g class="stagger" style="animation-delay: 1500ms" transform="translate(25, 0)">
